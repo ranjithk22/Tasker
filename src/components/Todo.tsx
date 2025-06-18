@@ -20,7 +20,7 @@ const Todo = ({ todos, editTodo, deleteTodo, todoCompleted }: PropTypes) => {
                             <div className="flex items-center">
                                 {item.isCompleted ? <CheckIcon size={size} color={color} /> : ""}
                                 <button className="btn-sm ml-2" onClick={() => todoCompleted(item.id, item.isCompleted)}>
-                                    {item.isCompleted ? 'Task Not Completed' : 'Task Completed'} </button>
+                                    {item.isCompleted ? 'Continue Task ?' : 'Task Completed !'} </button>
                                 <button className="btn-sm ml-2" onClick={() => editTodo(item.id)}>Edit</button>
                                 <button className="btn-sm ml-2" onClick={() => deleteTodo(item.id)}>Delete</button>
                             </div>

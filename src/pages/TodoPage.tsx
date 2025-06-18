@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react"
+import { useEffect, useReducer, useState } from "react"
 import Todo from "../components/Todo"
 import { v4 as uuidv4 } from 'uuid';
 
@@ -81,7 +81,6 @@ const TodoPage = () => {
             default:
                 return state
         }
-
     }
     const [todos, dispatch] = useReducer(todoReducer, [])
 
@@ -92,8 +91,9 @@ const TodoPage = () => {
             setTodo({ id: item.id, value: item.value, isCompleted: item.isCompleted })
         }
     }
-    console.log('todo: ', todo)
-    console.log('todos: ', todos)
+    useEffect(() => {
+        console.log(todos)
+    }, [todos])
 
     return (
         <div className="container my-[50px]">
